@@ -1,4 +1,5 @@
 from collections import deque
+
 V = int(input("enter the no. of nodes"))
 E = int(input("enter the no. of edges"))
 table={}
@@ -10,6 +11,8 @@ for i in range(E):
     table[s].add(tuple((d,w)))
 for i in table:
     print(i," -> ",table[i])
+
+    
 sn=int(input("enter the node taken as source node  "))
 visited={}
 for i in table:
@@ -18,7 +21,7 @@ q=deque([])
 bfs=[]
 visited[sn]=1
 q.append(sn)
-print(q)
+
 while(len(q)!=0):
     a=q.popleft()
     for i in table[a]:
@@ -26,9 +29,9 @@ while(len(q)!=0):
         if visited[b]!=1:
             visited[b]=1
             q.append(b)
-    print(q)     
+      
     bfs.append(a)
-    print(bfs)
+    
 
 print(bfs)
 
